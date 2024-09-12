@@ -17,43 +17,14 @@ StartOfFrame
 	lda #0
 	sta VSYNC
 	; 37 scanlines of vertical blank...
+	ldx #0
+	stx $40
+loop inx
+	cpx #37
 	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
-	sta WSYNC
+	bne loop 
+
+
 	; 192 scanlines of picture...
 	ldx #0
 	REPEAT 192; scanlines
